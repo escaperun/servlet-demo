@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+
+    <!--servlet配置-->
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.xyb.servlet.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <!--servlet的生命周期-->
+    <servlet>
+        <servlet-name>servletLifcyle</servlet-name>
+        <servlet-class>com.xyb.servlet.ServletLifcyle</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servletLifcyle</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+
+<!--
+    get 和 post 提交
+-->
+    <servlet>
+        <servlet-name>servletRequest</servlet-name>
+        <servlet-class>com.xyb.servlet.ServletRequest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>servletRequest</servlet-name>
+        <url-pattern>/request</url-pattern>
+    </servlet-mapping>
+
+    <!-- 读取properties文件 -->
+    <servlet>
+        <servlet-name>propertiesUtil</servlet-name>
+        <servlet-class>com.xyb.util.PropertiesUtil</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>propertiesUtil</servlet-name>
+        <url-pattern>/read</url-pattern>
+    </servlet-mapping>
+
+    <!--servletConfig-->
+    <servlet>
+        <servlet-name>servletConfigDemo</servlet-name>
+        <servlet-class>com.xyb.servlet.ServletConfigDemo</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>luyang</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletConfigDemo</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+    
+    <!--servletContext-->
+    <servlet>
+    <servlet-name>servletContextDemo1</servlet-name>
+    <servlet-class>com.xyb.servlet.ServletContextDemo1</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>servletContextDemo1</servlet-name>
+        <url-pattern>/before</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servletContextDemo2</servlet-name>
+        <servlet-class>com.xyb.servlet.ServletContextDemo2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletContextDemo2</servlet-name>
+        <url-pattern>/after</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
